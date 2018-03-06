@@ -1,0 +1,22 @@
+{
+  "name": "burger",
+  "version": "1.0.0",
+  "description": "This is the Homework Assignment for Week 14",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MichaelClautice/burger.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MichaelClautice/burger/issues"
+  },
+  "homepage": "https://github.com/MichaelClautice/burger#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
