@@ -14,12 +14,13 @@ const connection = mysql.createConnection({
   database: "burgers_db"
 });
 
-connection.connect(function(err) {
-  if (err) {
-    console.error("error connecting: " + err.stack);
-    return;
-  }
-  console.log("connected as id " + connection.threadId);
+// Connect to MySQL db
+// should this conection go somewhere else?
+connection.connect(function (error) {
+    if (error) throw err;
+    console.log("connected as id " + connection.threadId);
 });
 
 module.exports = connection;
+
+
