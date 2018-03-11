@@ -14,5 +14,6 @@ CREATE TABLE burgers
     devoured BOOLEAN DEFAULT false,
 -- date: a TIMESTAMP
     date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+-- which field is PK
     PRIMARY KEY (id)
 );
