@@ -5,7 +5,7 @@ var connection = require("./connection.js");
 // these methods retrieve & store data in the db
 var orm = {
 
-// selectAll() via Es6 fat arrow
+// selectAll method via Es6 fat arrow
 // replace var w/ ES6 let
 selectAll: (tableInput, checkbox) => {
     let queryString = "SELECT * FROM " + tableInput + ";";
@@ -15,7 +15,7 @@ selectAll: (tableInput, checkbox) => {
     });
   },
 
-// insertOne() via Es6 fat arrow
+// insertOne method via Es6 fat arrow
 // replace var w/ ES6 let
 insertOne: (tableInput, cols, vals, checkbox) =>  {
     let queryString = "INSERT INTO " + tableInput;
@@ -33,7 +33,7 @@ insertOne: (tableInput, cols, vals, checkbox) =>  {
         checkbox(result);
     });
 },
-// updateOne() via Es6 fat arrow
+// updateOne method via Es6 fat arrow
 // replace var w/ ES6 let
 updateOne: function(table, objColVals, condition, checkbox) {
     var queryString = "UPDATE " + table;
@@ -48,7 +48,22 @@ updateOne: function(table, objColVals, condition, checkbox) {
         }
         checkbox(result);
     });
-}
+},
+
+// delete method via Es6 fat arrow
+    delete: (table, condition, cb) => {
+        let queryString = "DELETE FROM " + table;
+        queryString += " WHERE ";
+        queryString += condition;
+// this is the CA-Burger-Repo•••••••••••••••
+        connection.query(queryString, (err, result) => {
+            if (err) {
+                throw err;
+            }
+            cb(result);
+        });
+    }
+
 
 }; // end ORM
 //exporting orm object for burger.js
