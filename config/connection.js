@@ -17,10 +17,11 @@ const connection = mysql.createConnection({
 // Connect to MySQL db
 // should this conection go somewhere else?
 connection.connect(function (error) {
-    if (error) throw err;
+    if (error) throw error;
     console.log("connected as id " + connection.threadId);
 });
-
+// JK - Export connection to ORM
+// mike - Export the connection..
 module.exports = connection;
 
 
